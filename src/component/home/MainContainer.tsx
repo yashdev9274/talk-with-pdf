@@ -1,10 +1,12 @@
+import { buttonVariants } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const MainContainer = () => {
   return (
-    <div className="container pt-[188px] md:pt-[300px] pb-[215px] sm:pb-[290px] px-[22px] sm:px-0 mx-auto text-center">
+    <div className="container -mt-20 pt-[188px] md:pt-[300px] pb-[215px] sm:pb-[290px] px-[22px] sm:px-0 mx-auto text-center">
       
-      <div className='mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50'>
+      <div className='mx-auto mb-4 -mt-20 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50'>
       <p className='text-sm font-semibold text-gray-700'>
         
         Talk with PDF
@@ -26,10 +28,8 @@ const MainContainer = () => {
       <p className="text-xl sm:text-2xl pb-10 sm:pb-8 leading-[19px] sm:leading-[34.5px] w-[232px] sm:w-full tracking-[-0.4px] sm:tracking-[-0.6px] text-center mx-auto">
         Have a conversation with your papers, textbooks, and contracts for free
       </p>
-      <Link href={'/dashboard'}>
-        <button className="bg_linear rounded-full sm:px-14 px-12 py-[2.5px] sm:py-4 text-white text-center text-xl sm:text-[30px] font-medium leading-[37px] tracking-[-0.3px]">
-          Get Started
-        </button>
+      <Link className={buttonVariants()} href={'/dashboard'} target='blank'>
+        Get Started <ArrowRight className='ml-2 h-5 w-5'/>
       </Link>
     </div>
   );

@@ -1,3 +1,5 @@
+import { buttonVariants } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -23,9 +25,9 @@ const HowToUse = () => {
   return (
     <div
       id="how-it-works"
-      className="xl:max-w-[1700px] xl:mx-auto container pt-9 sm:pt-[77px] pb-[100px] sm:pb-[264px] px-[30px] sm:px-0"
+      // className="xl:max-w-[1700px] xl:mx-auto -mt-25 container pt-9 sm:pt-[77px] pb-[100px] sm:pb-[264px] px-[30px] sm:px-0"
     >
-      <h3 className="pb-[66px] sm:pb-[174px] text-center text-3xl sm:text-[60px] text_bg leading-[72px] tracking-[-0.6px] sm:tracking-[-1.2px]">
+      <h3 className=" pb-[66px] sm:pb-[174px] -mt-20 text-center text-3xl sm:text-[60px] text_bg leading-[72px] tracking-[-0.6px] sm:tracking-[-1.2px]">
         How it Works
       </h3>
       <div className="text-black grid grid-cols-1 md:grid-cols-3 gap-[64px] sm:gap-[112px] md:mx-20">
@@ -47,20 +49,15 @@ const HowToUse = () => {
               <p className="text-primary text-center text-[17px] sm:text-2xl leading-[20px] sm:leading-[34.5px] tracking-[-0.34px] sm:tracking-[-0.6px] pb-5 sm:pb-0 max-w-sm">
                 {item.description}
               </p>
-              <Link
-                href="/dashboard"
-                className="flex gap-3 sm:gap-[33px] px-6 sm:px-[37px] py-[1px] sm:py-[14px] items-center border rounded-[29px] border-solid border-primary"
-              >
-                <span className="text-[17px] sm:text-[30px] leading-[34.5px] tracking-[-0.34px] sm:tracking-[-0.6px]">
-                  Get started
-                </span>
-                <Image
+              <Link className={buttonVariants()} href={'/dashboard'} target='blank'>
+                Get Started <ArrowRight className='ml-2 h-5 w-5'/>
+                {/* <Image
                   src="/right-arrow.svg"
                   alt="Arrow"
                   width={31}
                   height={24}
                   className="w-4 sm:w-[31px] h-auto"
-                />
+                /> */}
               </Link>
             </div>
           </div>
