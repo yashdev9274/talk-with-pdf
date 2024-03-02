@@ -1,5 +1,12 @@
 import MaxWidthWrapper from "@/component/MaxWidthWrapper";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
+import {
+    LoginLink,
+    RegisterLink,
+    getKindeServerSession,
+} from "@kinde-oss/kinde-auth-nextjs/server"
+import { ArrowRight } from "lucide-react";
 
 const Navbar = () => {
     return ( 
@@ -14,6 +21,36 @@ const Navbar = () => {
                             PDFChat.AI
                         </span>
                     </Link>
+
+                    <div className="hidden items-center space-x-4 sm:flex">
+                        <>
+                            <Link
+                                href='/pricing'
+                                className={buttonVariants({
+                                    variant: "ghost",
+                                    size: "sm",
+                                })}
+                            >
+                                Pricing
+                            </Link>
+                            <LoginLink
+                                className={buttonVariants({
+                                    variant: "ghost",
+                                    size: "sm",
+                                })}
+                            >
+                                Sigin
+                            </LoginLink>
+                            <RegisterLink
+                                className={buttonVariants({
+                                  size: 'sm',
+                                })}>
+                                Start for Free{' '}
+                                <ArrowRight className='ml-1.5 h-5 w-5' />
+                            </RegisterLink>
+                        </>
+                    </div>
+
                 </div>
             </MaxWidthWrapper>
         </nav>
