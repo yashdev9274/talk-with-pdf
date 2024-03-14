@@ -1,3 +1,4 @@
+// import React, { useState } from "react";
 import MaxWidthWrapper from "@/component/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
@@ -6,23 +7,33 @@ import {
     RegisterLink,
     getKindeServerSession,
 } from "@kinde-oss/kinde-auth-nextjs/server";
-// import { HoveredLink, Menu, MenuItem, ProductItem } from ".NavbarCompnent";
-// import { cn } from "@/utils/cn";
-import { ArrowRight } from "lucide-react";
 
-const Navbar = () => {
+import { ArrowRight } from "lucide-react";
+import NavbarMenu from "./navbar-menu";
+import { cn } from "@/lib/utils";
+
+const Navbar = ({ className }: { className?: string }) => {
+
+
+
     return (
-        <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
-            <MaxWidthWrapper>
+
+        // <NavbarMenu />
+        <nav className='sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
+            < MaxWidthWrapper >
+
+                {/* <NavbarMenu /> */}
                 <div className="flex h-14 items-center justify-between border-b border-zinc-200">
                     <Link
                         href="/"
                         className="flex z-40 font-semibold"
                     >
                         <span>
-                            PDFChat.AI
+                            D&D
                         </span>
                     </Link>
+
+
 
                     <div className="hidden items-center space-x-4 sm:flex">
                         <>
@@ -54,9 +65,10 @@ const Navbar = () => {
                     </div>
 
                 </div>
-            </MaxWidthWrapper>
-        </nav>
+            </MaxWidthWrapper >
+        </nav >
     );
 }
 
 export default Navbar;
+

@@ -8,12 +8,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <MaxWidthWrapper className="sm:p-7 sm:pb-0">
-      <MainContainer/>
-      <HowToUse/>
-      <WeAreOpenSourced/>
-      <Footer/>
+      <MainContainer />
+      <HowToUse />
+      <WeAreOpenSourced />
+      <Footer />
     </MaxWidthWrapper>
-    
+
 
   );
 }
